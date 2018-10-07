@@ -1,0 +1,52 @@
+.body {
+    background: #F2F2F2;
+    padding: 1.5%;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    height: 100%;
+}
+
+.header{    
+    background: #0B0E62;
+}
+
+.top-navbar{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+    background: #0B0E62;
+}
+
+.top-navbar li{
+    display: inline-block;
+}
+
+.top-navbar li a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.top-navbar li.active a{
+    border: 1px solid white;
+}
+
+.top-navbar li a:hover{
+    border: 1px solid white;
+
+}
+
+.login-box{
+    display: inline-block;
+    padding: 0 50px;
+    background: #4e5096;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    box-shadow: 0 10px 6px -6px #777;
+}
