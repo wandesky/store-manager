@@ -56,6 +56,21 @@
     box-shadow: 0 10px 6px -6px #777;
 }
 
+.top-base{
+    display: inline-block;
+    width: 100%;
+}
+
+.logged-in-status{
+    line-height: 6pt;
+     text-align: right; 
+    float: right; 
+}
+
+.page-heading{
+    float: left;
+}
+
 .sales-records-table{
     display: flex;
     justify-content: center;
@@ -71,7 +86,7 @@
 
 .sales-records-table td, th{
     color: #ffffff;
-    padding: 6px 4px;
+    padding: 10px 6px;
 }
 
 .sales-records-table tr:nth-child(odd){
