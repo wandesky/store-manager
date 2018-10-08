@@ -58,7 +58,7 @@
 .sales-records-table{
     display: inline-block;
     padding: 0 50px;
-    background: #4e5096;
+    background: #0B0E62;
     position: absolute;
     /* width: 80%; */
     text-align: center;
@@ -71,7 +71,19 @@
 }
 
 .sales-records-table td, th{
-    border: 1px solid #AAAAAA;
+    /* border: 1px solid #AAAAAA; */
     padding: 3px 2px;
-    color: #a3e637c0;
+    color: #ffffff;
+    padding: 6px 4px;
+}
+
+.sales-records-table tr:nth-child(odd){
+    background: #1c6ea4;
+}
+
+table{
+    text-align: center;
+}
+table th{
+    background: #4e5096;
 }
