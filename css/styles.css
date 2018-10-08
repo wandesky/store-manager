@@ -54,3 +54,24 @@
     margin: -100px 0 0 -150px;
     box-shadow: 0 10px 6px -6px #777;
 }
+
+.sales-records-table{
+    display: inline-block;
+    padding: 0 50px;
+    background: #4e5096;
+    position: absolute;
+    /* width: 80%; */
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    box-shadow: 0 10px 6px -6px #777;
+    border: 1px solid #1c6ea4;
+    font-size: 13px;
+}
+
+.sales-records-table td, th{
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+    color: #a3e637c0;
+}
