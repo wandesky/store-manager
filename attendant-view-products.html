@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>View Products(Admin's View)</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <div class="body">
+            <div class = "header">
+                <a href="index.html"><img src="images/logo"/></a>
+                <ul class = "top-navbar">
+                    <li><a href=""> HOME </a></li>
+                    <li><a href=""> ADD PRODUCT </a></li>
+                    <li><a href=""> SALES RECORDS </a></li>
+                    <li class="active"><a href=""> VIEW PRODUCTS </a></li>
+                </ul>
+            </div>
+            <div class="top-base">
+                <div class="logged-in-status">
+                    <p>Jina Lako,</p>
+                    <p>You are logged in as an attendant</p>
+                    <p><a href="admin-view-products.html">Switch to Admin's View ?</a></p>
+                </div>
+                <div class = "page-heading">
+                    <h1>Available Products</h1>
+                </div>
+
+            </div>
+
+            <div class="sales-records-table">
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th><th>Quantity in Inventory</th><th>Minimum Quantity Allowed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            </td><td>Spoon</td><td>250</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Mug</td><td>100</td><td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Towel</td><td>300</td><td>600</td>
+                        </tr>
+                        <tr>
+                            <td>Knive</td><td>100</td><td>300</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div id="myModal" class="modal">
+                 <div class="modal-content"> 
+                <!-- <span class="close">&times;</span> -->
+                <p>Modify Sale Record</p>
+                <input type = "text" value="Item">
+                <input type = "text" value="Quantity in Inventory">
+                <input type = "text" value="Minimum Qty Allowed">
+                <button id="update" >Update</button></td>
+                 </div> 
+            </div>
+            
+            <!-- <script>
+                var modal = document.getElementById('myModal');
+                var btn = document.getElementById("myBtn");
+                var span = document.getElementsByClassName("close")[0];
+                btn.onclick = function(){
+                    modal.style.display = "block";
+                }
+
+                span.onclick = function(){
+                    modal.style.display = "none";
+                }
+
+                window.onclick = function(event){
+                    if(event.target == modal){
+                        modaly.style.display = "none";
+                    }
+                }
+            </script> -->
+        </div>
+        
+    </body>
+    <script src="js/script.js"></script>
+</html>
