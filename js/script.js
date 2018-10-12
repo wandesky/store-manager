@@ -1,4 +1,5 @@
 var modal = document.getElementById('myModal');
+var modal2 = document.getElementById('myModal2');
 var updateModal = document.getElementById('updateModal');
 var deleteModal = document.getElementById('deleteModal');
 var updateBtn = document.getElementById("update");
@@ -9,6 +10,11 @@ var btn2 = document.getElementById("myBtn2");
 var btn3 = document.getElementById("myBtn3");
 var btn4 = document.getElementById("myBtn4");
 var btn5 = document.getElementById("myBtn5");
+
+var btna = document.getElementById("myBtna");
+var btnb = document.getElementById("myBtnb");
+var btnc = document.getElementById("myBtnc");
+var btnd = document.getElementById("myBtnd");
 
 var delbtn1 = document.getElementById("del1");
 var delbtn2 = document.getElementById("del2");
@@ -59,6 +65,22 @@ btn4.onclick = function(){
 
 btn5.onclick = function(){
     modal.style.display = "block";
+}
+
+btna.onclick = function(){
+    modal2.style.display = "block";
+}
+
+btnb.onclick = function(){
+    modal2.style.display = "block";
+}
+
+btnc.onclick = function(){
+    modal2.style.display = "block";
+}
+
+btnd.onclick = function(){
+    modal2.style.display = "block";
 }
 
 // delbtn1.onclick = function(){
