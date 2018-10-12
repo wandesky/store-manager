@@ -19,6 +19,7 @@
                 <div class="logged-in-status">
                     <p>Fname Lname,</p>
                     <p>You are logged in as an admin</p>
+                    <p><a href="attendant-view-products.html">Switch to Attendant's View ?</a></p>
                 </div>
                 <div class = "page-heading">
                     <h1>Available Products</h1>
@@ -54,32 +55,19 @@
             <div id="myModal" class="modal">
                  <div class="modal-content"> 
                 <span class="close">&times;</span>
-                <p>Modify Sale Record</p>
+                <p>Modify Product Record</p>
                 <input type = "text" value="Item">
                 <input type = "text" value="Quantity in Inventory">
                 <input type = "text" value="Minimum Qty Allowed">
                 <button id="update" >Update</button></td>
                  </div> 
             </div>
-            
-            <script>
-                var modal = document.getElementById('myModal');
-                var btn = document.getElementById("myBtn");
-                var span = document.getElementsByClassName("close")[0];
-                btn.onclick = function(){
-                    modal.style.display = "block";
-                }
-
-                span.onclick = function(){
-                    modal.style.display = "none";
-                }
-
-                window.onclick = function(event){
-                    if(event.target == modal){
-                        modaly.style.display = "none";
-                    }
-                }
-            </script>
+            <div id="updateModal" class="modal">
+                 <div class="modal-content"> 
+                <!-- <span class="close">&times;</span> -->
+                <p>The update feature is currently not available</p>
+                 </div> 
+            </div>
         </div>
         
     </body>
