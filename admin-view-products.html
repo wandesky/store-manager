@@ -32,21 +32,21 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Item</th><th>Quantity in Inventory</th><th>Minimum Quantity Allowed</th><th>Update</th>
+                            <th>Item</th><th>Quantity in Inventory</th><th>Minimum Quantity Allowed</th><th>Update</th><th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            </td><td>Spoon</td><td>250</td><td>100</td><td><button id="myBtn">Modify</button></td>
+                            </td><td>Spoon</td><td>250</td><td>100</td><td><button id="myBtn">Modify</button></td><td><button id="del1">Delete</button></td>
                         </tr>
                         <tr>
-                            <td>Mug</td><td>100</td><td>500</td><td><button id="myBtn1">Modify</button></td>
+                            <td>Mug</td><td>100</td><td>500</td><td><button id="myBtn1">Modify</button></td><td><button id="del2">Delete</button></td>
                         </tr>
                         <tr>
-                            <td>Towel</td><td>300</td><td>600</td><td><button id="myBtn2">Modify</button></td>
+                            <td>Towel</td><td>300</td><td>600</td><td><button id="myBtn2">Modify</button></td><td><button id="del3">Delete</button></td>
                         </tr>
                         <tr>
-                            <td>Knive</td><td>100</td><td>300</td><td><button id="myBtn3">Modify</button></td>
+                            <td>Knive</td><td>100</td><td>300</td><td><button id="myBtn3">Modify</button></td><td><button id="del4">Delete</button></td>
                         </tr>
                     </tbody>
 
@@ -54,18 +54,24 @@
             </div>
             <div id="myModal" class="modal">
                  <div class="modal-content"> 
-                <span class="close">&times;</span>
+                <!-- <span class="close">&times;</span> -->
                 <p>Modify Product Record</p>
                 <input type = "text" value="Item">
                 <input type = "text" value="Quantity in Inventory">
                 <input type = "text" value="Minimum Qty Allowed">
                 <button id="update" >Update</button></td>
+                <button id="update" >Delete</button></td>
                  </div> 
             </div>
             <div id="updateModal" class="modal">
                  <div class="modal-content"> 
                 <!-- <span class="close">&times;</span> -->
                 <p>The update feature is currently not available</p>
+                 </div> 
+            </div>
+            <div id="deleteModal" class="modal">
+                 <div class="modal-content"> 
+                <p>This object will be deleted -Functionality not currently implemented-</p>
                  </div> 
             </div>
         </div>
