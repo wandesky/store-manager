@@ -61,29 +61,29 @@ class ProductList(Resource):
         '''Create a new product'''
         return DemoProduct.create(api.payload), 201
 
-    @products_ns.route('/<int:id>')
-    @products_ns.response(404, 'Product not found')
-    @products_ns.param('id', 'Unique identifier of the product')
-    class Product(Resource):
-        '''Show a single product with provision for deleting products'''
-        @products_ns.doc('get_product')
-        @products_ns.marshal_with(product)
-        def get(self, id):
-            '''Fetch a given resource'''
-            return DemoProduct.get(id)
+@products_ns.route('/<int:id>')
+@products_ns.response(404, 'Product not found')
+@products_ns.param('id', 'Unique identifier of the product')
+class Product(Resource):
+    '''Show a single product with provision for deleting products'''
+    @products_ns.doc('get_product')
+    @products_ns.marshal_with(product)
+    def get(self, id):
+        '''Fetch a given resource'''
+        return DemoProduct.get(id)
 
-        @products_ns.doc('delete_product')
-        @products_ns.response(204, 'Product deleted')
-        def delete(self, id):
-            '''Delete a product using its identifier'''
-            DemoProduct.delete(id)
-            return '', 204
+    @products_ns.doc('delete_product')
+    @products_ns.response(204, 'Product deleted')
+    def delete(self, id):
+        '''Delete a product using its identifier'''
+        DemoProduct.delete(id)
+        return '', 204
 
-        @products_ns.expect(product)
-        @products_ns.marshal_with(product)
-        def put(self, id):
-            '''Update a product using its identifier'''
-            return DemoProduct.update(id, api.payload)
+    @products_ns.expect(product)
+    @products_ns.marshal_with(product)
+    def put(self, id):
+        '''Update a product using its identifier'''
+        return DemoProduct.update(id, api.payload)
 
-    if __name__ == '__main__':
-        app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
