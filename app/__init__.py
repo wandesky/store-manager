@@ -30,5 +30,6 @@ def create_app(config_name):
 
     app = Flask(__name__)
     api = Api(app)
+    api.add_resource(Products, '/products')
     
     return app
