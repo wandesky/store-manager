@@ -1,8 +1,9 @@
 from flask import Flask, Blueprint
-from flask_restplus import Api, Resource
+from flask_restplus import Api, Resource, fields
 from flask_jwt_extended import JWTManager
 from instance.config import app_config
-from app.api.v1.views.products import Products #, GetSingleProduct
+from werkzeug.contrib.fixers import ProxyFix
+from app.api.v1.views.products import Products, Product #, GetSingleProduct
 # from app.api.v1.views.sales import Sales, GetSingleSale
 # from app.api.v1.views.users import auth
 # app = Flask(__name__, instance_relative_config=True)
@@ -27,9 +28,24 @@ def create_app(config_name):
     # api.add_resource(GetSingleSale, '/sales/<salesId>')
     # api.add_resource(Products, '/products')
     # api.add_resource(GetSingleProduct, '/products/<productId>')
-
     app = Flask(__name__)
-    api = Api(app)
-    api.add_resource(Products, '/products')
+    app.wsgi_app = ProxyFix(app.wsgi_app)
+    api = Api(app, version='1', title='Store Manager API',
+        description='Backend code for the Andela Store Manager Challenge',
+        )
+
+    products_ns = api.namespace('products', description='Product operations')
+
+    product = api.model('Product', {
+        'id':fields.Integer(readOnly = True, description='The product unique identifier'),
+        'details':fields.String(required=True, description='Product details')
+    })
+
+
+    # app = Flask(__name__)
+    # api = Api(app)
+    # api.add_resource(Products, '/products')
+    api.add_resource(Products, '/products/')
+    api.add_resource(Product, '/products/<int:id>')
     
     return app
