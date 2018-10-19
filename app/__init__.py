@@ -2,7 +2,7 @@ from flask import Flask, Blueprint
 from flask_restplus import Api, Resource
 from flask_jwt_extended import JWTManager
 from instance.config import app_config
-from app.api.v1.views.products import Products, GetSingleProduct
+from app.api.v1.views.products import Products #, GetSingleProduct
 # from app.api.v1.views.sales import Sales, GetSingleSale
 # from app.api.v1.views.users import auth
 # app = Flask(__name__, instance_relative_config=True)
