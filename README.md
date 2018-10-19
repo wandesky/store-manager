@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/wandesky/store-manager.svg?branch=restplus-challenge-two)](https://travis-ci.com/wandesky/store-manager)
 # Store-manager
 ## Introduction
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
