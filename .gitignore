@@ -1,3 +1,6 @@
+#ignores by wandesky
+*.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -57,7 +60,7 @@ local_settings.py
 db.sqlite3
 
 # Flask stuff:
-instance/
+#manually commented by wandesky #instance/
 .webassets-cache
 
 # Scrapy stuff:
