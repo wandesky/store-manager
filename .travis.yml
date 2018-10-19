@@ -1,27 +1,37 @@
 language: python
-python:
-   - "3.6"
+  python:
+    - "3.6"
+script:
+  - nosetests
 
-# command to install dependencies
 install:
   - pip install -r requirements.txt
 
-# Run tests
-script:
-    - nosetests --with-coverage --cover-package=app && coverage report
+### Some more settings for travis
+# language: python
+# python:
+#    - "3.6"
 
-after_success:
-- coverallslanguage: python	
-python:	
- - "3.6"	
-cache: pip	
-install:	
- - pip install -r requirements.txt
- - pip install coveralls
- - pip install codeclimate-test-reporter
+# # command to install dependencies
+# install:
+#   - pip install -r requirements.txt
 
-script:	
- - nosetests application/tests/v1 --with-coverage 
-after_success:
- - coveralls
-- codeclimate-test-reporter
+# # Run tests
+# script:
+#     - nosetests --with-coverage --cover-package=app && coverage report
+
+# after_success:
+# - coverallslanguage: python	
+# python:	
+#  - "3.6"	
+# cache: pip	
+# install:	
+#  - pip install -r requirements.txt
+#  - pip install coveralls
+#  - pip install codeclimate-test-reporter
+
+# script:	
+#  - nosetests app/tests/v1 --with-coverage 
+# after_success:
+#  - coveralls
+#  - codeclimate-test-reporter
