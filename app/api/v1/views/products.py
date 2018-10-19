@@ -1,5 +1,5 @@
 from flask import Flask, abort, request, make_response, jsonify, Blueprint
-from flask_restplus import Resource, Api
+from flask_restful import Resource, Api
 from flask_jwt_extended import (JWTManager, jwt_required, get_jwt_claims)
 from app.api.v1.models.products import ProductsModel
 
@@ -59,4 +59,4 @@ class GetSingleProduct(Resource):
                         'response':product
                     }
                 )
-return jsonify({'response':'Product Not Available'})
+        return jsonify({'response':'Product Not Available'})
