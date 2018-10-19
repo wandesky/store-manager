@@ -26,7 +26,8 @@ class TestProduct(unittest.TestCase):
             )
             # result = json.loads(response.data.decode('utf-8'))
             # self.assertEqual(response.status_code, 200, result['response'])
-            self.assertEqual(response, {'hello':'world'})
+            # self.assertEqual(response, {'hello':'world'})
+            self.assertEqual(response.status_code, 201)
     
 
     def test_get_product(self):
@@ -37,14 +38,16 @@ class TestProduct(unittest.TestCase):
             )
             # result = json.loads(response.data.decode('utf-8'))
             # self.assertEqual(response.status_code, 200, result['Products'])
-            self.assertEqual(response, {'hello':'world'})
+            self.assertEqual(response.status_code, 200)
+            # self.assertEqual(response, {'hello':'world'})
     
     def test_get_SingleProduct(self):
         with self.client:
             response = self.client.get(
-                '/api/v1/products/la01',
+                '/api/v1/products/1',
                 headers={'content_type':'application/json'}
             )
             # result = response.data#json.loads(response.data.decode('utf-8'))
-            self.assertEqual(response, {'hello':'world'})
+            self.assertEqual(response.status_code, 200)
+            # self.assertEqual(response.status_code, {'hello':'world'})
             # self.assertEqual(response.status_code, 200, result['response'])
