@@ -1,6 +1,6 @@
 #ignores by wandesky
 *.vscode
-*restplus-venv
+*restplus-venv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
