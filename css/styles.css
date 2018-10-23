@@ -76,31 +76,35 @@
 .sales-records-table{
     display: flex;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 0px;
     background: #0B0E62;
     align-items: center;
     text-align: center;
     box-shadow: 0 10px 6px -6px #777;
-    border: 1px solid #1c6ea4;
+    /* border: 1px solid #1c6ea4; */
     font-size: 13px;
-    
+    /* border-bottom: solid 1px white; */    
 }
 
 .sales-records-table td, th{
     color: #ffffff;
     padding: 10px 6px;
+    border-bottom: solid 1px white;
+    border-left: solid 1px white;
+
 }
 
 .sales-records-table tr:nth-child(odd){
-    background: #1c6ea4;
+    /* background: #1c6ea4; */
 }
 
 table{
     text-align: center;
     width: 100%;
+    border: solid 1px #FFFFFF;
 }
 table th{
-    background: #4e5096;
+    /* background: #4e5096; */
 }
 
 /* Modal Content */
