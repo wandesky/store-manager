@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/wandesky/store-manager.svg?branch=restplus-challenge-two)](https://travis-ci.com/wandesky/store-manager)
+[![Build Status](https://travis-ci.org/wandesky/store-manager.svg?branch=ft-post-sale-record-161204436)](https://travis-ci.org/wandesky/store-manager)
 
 [![Coverage Status](https://coveralls.io/repos/github/wandesky/store-manager/badge.svg?branch=ft-post-sale-record-161204436)](https://coveralls.io/github/wandesky/store-manager?branch=ft-post-sale-record-161204436)
 # Store-manager
