@@ -74,6 +74,12 @@ class Sale(Resource):
         '''Fetch a given resource'''
         return DemoSale.get(id)
 
+    @sales_ns.doc('create_sale')
+    @sales_ns.marshal_with(sale)
+    def post(self, id):
+        '''Fetch a given resource'''
+        return DemoSale.get(id)
+
     @sales_ns.doc('delete_sale')
     @sales_ns.response(204, 'Sale deleted')
     def delete(self, id):
