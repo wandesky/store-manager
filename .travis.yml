@@ -2,9 +2,14 @@ language: python
 python:
   - "3.6"
 install:
-  - pip install flask
-  - pip install flask-restplus
-  - pip install flask-jwt-extended
-  - pip install nose
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install codeclimate-test-reporter
+
 script:
-  - nosetests --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
+  # - nosetests
+  - py.test --cov=app/tests/v1
+
+after-success:
+  - coveralls
+  - codeclimate-test-reporter
