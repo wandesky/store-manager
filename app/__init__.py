@@ -57,7 +57,7 @@ def create_app(config_name):
     api.add_resource(Products, '/api/v1/products/')
     api.add_resource(Sales, '/api/v1/sales/')
     api.add_resource(Product, '/api/v1/products/<int:id>')
-    api.add_resource(Sales, '/api/v1/sales/<int:id>')
+    api.add_resource(Sale, '/api/v1/sales/<int:id>')
     
     return app
 

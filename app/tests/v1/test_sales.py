@@ -11,13 +11,13 @@ class TestSale(unittest.TestCase):
         self.app = create_app(config_name="testing")
         self.app.testing = True
         self.client = self.app.test_client()
-        self.sale = {
+        self.sales = {
             "sale-id":1,
             "product-id":5,
             "attendant":"mutiso"
         }
 
-    def test_post_product(self):
+    def test_post_sale(self):
         with self.client:
             response = self.client.post(
                 '/api/v1/sales', 
@@ -30,7 +30,7 @@ class TestSale(unittest.TestCase):
             self.assertEqual(response.status_code, 201)
     
 
-    def test_get_product(self):
+    def test_get_sale(self):
         with self.client:
             response = self.client.get(
                 '/api/v1/sales',
@@ -41,7 +41,7 @@ class TestSale(unittest.TestCase):
             self.assertEqual(response.status_code, 200)
             # self.assertEqual(response, {'hello':'world'})
     
-    def test_get_SingleProduct(self):
+    def test_get_SingleSale(self):
         with self.client:
             response = self.client.get(
                 '/api/v1/sales/1',
