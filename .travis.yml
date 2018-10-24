@@ -7,7 +7,6 @@ install:
   - pip install codeclimate-test-reporter
 
 script:
-  # - nosetests
   - py.test --cov=app/tests/v1
 
 after-success:
