@@ -2,7 +2,6 @@ from flask import Flask
 from flask_restplus import Api, Resource, fields
 from werkzeug.contrib.fixers import ProxyFix
 
-
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1', title='Store Manager API',
@@ -12,7 +11,7 @@ api = Api(app, version='1', title='Store Manager API',
 sales_ns = api.namespace('sales', description='Sale operations')
 
 sale = api.model('Sale', {
-    'sale-id':fields.Integer(readOnly = True, description='The sale unique identifier'),
+    'id':fields.Integer(readOnly = True, description='The sale unique identifier'),
     'product-id':fields.Integer(required=True, description='The id of the item sold'),
     'attendant':fields.String(required=True, description='The attendant who made the sale')
 })
@@ -30,7 +29,8 @@ class SaleDataAccessObject(object):
 
     def create(self, data):
         sale = data
-        sale['id'] = self.counter = self.counter + 1
+        # sale['id'] = self.counter + 1
+        self.counter = self.counter + 1
         self.sales.append(sale)
         return sale
 
@@ -68,6 +68,7 @@ class Sales(Resource):
 @sales_ns.param('id', 'Unique identifier of the sold item')
 class Sale(Resource):
     '''Show a single sale with provision for deleting existing sales'''
+    
     @sales_ns.doc('get_sale')
     @sales_ns.marshal_with(sale)
     def get(self, id):
@@ -78,7 +79,7 @@ class Sale(Resource):
     @sales_ns.marshal_with(sale)
     def post(self, id):
         '''Fetch a given resource'''
-        return DemoSale.get(id)
+        return DemoSale.create(id)
 
     @sales_ns.doc('delete_sale')
     @sales_ns.response(204, 'Sale deleted')

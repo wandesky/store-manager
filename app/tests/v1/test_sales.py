@@ -7,7 +7,6 @@ from instance.config import app_config
 class TestSale(unittest.TestCase):
 
     def setUp(self):
-        # self.app = create_app(config_name="testing")
         self.app = create_app(config_name="testing")
         self.app.testing = True
         self.client = self.app.test_client()
@@ -17,20 +16,7 @@ class TestSale(unittest.TestCase):
             "attendant":"mutiso"
         }
 
-    def test_post_sale(self):
-        with self.client:
-            response = self.client.post(
-                '/api/v1/sales', 
-                data = json.dumps(self.sales),
-                headers={'content_type':'application/json'}
-            )
-            # result = json.loads(response.data.decode('utf-8'))
-            # self.assertEqual(response.status_code, 200, result['response'])
-            # self.assertEqual(response, {'hello':'world'})
-            self.assertEqual(response.status_code, 201)
-    
-
-    def test_get_sale(self):
+    def test_get_all_sales(self):
         with self.client:
             response = self.client.get(
                 '/api/v1/sales',
@@ -40,8 +26,20 @@ class TestSale(unittest.TestCase):
             # self.assertEqual(response.status_code, 200, result['Products'])
             self.assertEqual(response.status_code, 200)
             # self.assertEqual(response, {'hello':'world'})
+
+    def test_post_sale(self):
+        with self.client:
+            response = self.client.post(
+                '/api/v1/sales/', 
+                data = json.dumps(self.sales),
+                headers={'content_type':'application/json'}
+            )
+            # result = json.loads(response.data.decode('utf-8'))
+            # self.assertEqual(response.status_code, 200, result['response'])
+            # self.assertEqual(response, {'hello':'world'})
+            self.assertEqual(response.status_code, 201)
     
-    def test_get_SingleSale(self):
+    def test_get_single_sales(self):
         with self.client:
             response = self.client.get(
                 '/api/v1/sales/1',
