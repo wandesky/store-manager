@@ -12,5 +12,5 @@ script:
   - nosetests --with-coverage --cover-package=app && coverage report
 
 after-success:
-  - coveralls
-  - codeclimate-test-reporter
+- coveralls
+# - codeclimate-test-reporter
