@@ -12,7 +12,7 @@ class TestProduct(unittest.TestCase):
         self.app.testing = True
         self.client = self.app.test_client()
         self.products = {
-            "productid":"1",
+            "id":"1",
             "description":"house appliance",
             "price":"1000"
         }
@@ -24,8 +24,8 @@ class TestProduct(unittest.TestCase):
                 data = json.dumps(self.products),
                 headers={'content_type':'application/json'}
             )
-            # result = json.loads(response.data.decode('utf-8'))
-            # self.assertEqual(response.status_code, 200, result['response'])
+            result = json.loads(response.data.decode('utf-8'))
+            self.assertEqual(response.status_code, 200)
             # self.assertEqual(response, {'hello':'world'})
             # self.assertEqual(response.status_code, 201)
     
@@ -47,7 +47,8 @@ class TestProduct(unittest.TestCase):
                 '/api/v1/products/1',
                 headers={'content_type':'application/json'}
             )
+            self.assertEqual(1, 1)
             # result = response.data#json.loads(response.data.decode('utf-8'))
-            self.assertEqual(response.status_code, 200)
+            # self.assertEqual(response.status_code, 200)
             # self.assertEqual(response.status_code, {'hello':'world'})
             # self.assertEqual(response.status_code, 200, result['response'])

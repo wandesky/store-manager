@@ -38,14 +38,14 @@ def create_app(config_name):
     products_ns = api.namespace('products', description='Product operations')
 
     product = api.model('Product', {
-        'id':fields.Integer(readOnly = True, description='The product unique identifier'),
+        'id':fields.String(readOnly = True, description='The product unique identifier'),
         'details':fields.String(required=True, description='Product details')
     })
 
     sales_ns = api.namespace('sales', description='Sale operations')
 
     sale = api.model('Sale', {
-        'id':fields.Integer(readOnly = True, description='The sale unique identifier'),
+        'id':fields.String(readOnly = True, description='The sale unique identifier'),
         'product-id':fields.String(required=True, description='The id of the sold item'),
         'attendant':fields.String(required=True, description='The attendant who made the sale')
     })
